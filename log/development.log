@@ -2169,3 +2169,424 @@ Processing by Devise::SessionsController#new as HTML
   Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
   Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (6.5ms)
 Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-05-18 22:32:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-05-18 22:32:50 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-05-18 22:33:02 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgWl61gdZD+Jw3fU6hQItR8aT2bgZlMwJVy/bFysDqlBSg/szUHPbYfCBnlVx9PxYrCsOWxwhpV7Axz14yCgFA==", "user"=>{"email"=>"eman@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (40.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eman@yahoo.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 352ms (Views: 31.2ms | ActiveRecord: 40.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-05-18 22:33:08 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zm7Dy36kXFY+VFL1myCwGXMUGhOkwVW2431xy2kANPDJIWnM6/j3BDBVI1gk82tdDr75TCjXgBO9ItJS1oyaTQ==", "user"=>{"email"=>"eman@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eman@yahoo.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 123ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-05-18 22:33:18 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Yz+B2Ju74BeCCgpOxR5KUqPpNhxrf6bgrvZIqP41Vfqw1QA9zJE0lAJWYSEx6JtNyVHh/27Kz7c5Hq7HHR76g==", "user"=>{"email"=>"eman@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eman@yahoo.com' LIMIT 1[0m
+  [1m[35mSQL (44.7ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('eman@yahoo.com', '$2a$10$ByUEQMUhDuJnP74KPT/Pp.8x9d45hzvjikGT5Bg9WPM75w4yub9y2', '2016-05-18 20:33:18', '2016-05-18 20:33:18')
+  [1m[36m (39.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2016-05-18 20:33:19', `current_sign_in_at` = '2016-05-18 20:33:19', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2016-05-18 20:33:19' WHERE `users`.`id` = 1[0m
+  [1m[35m (59.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 267ms (ActiveRecord: 144.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-18 22:33:19 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-05-18 22:33:35 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-05-18 22:33:42 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-18 22:33:42 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-05-18 22:33:48 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-18 22:33:48 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-05-18 22:33:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-18 22:33:59 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-05-18 22:34:41 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-05-18 22:34:47 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-05-18 22:35:09 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pmz/BMdefDbdTKiq5+Ap+uDNfJLq19dtOy//rBzjCsckWAFJZIJ6HeSE6SEchAci1DkXDDPTzxajolqLaGd5Wg==", "user"=>{"email"=>"eman@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'eman@yahoo.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 125ms (Views: 30.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-05-18 22:35:38 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yJ2HfQu45dLtVGStaVTK5Prdibm6xfyl4XFn6CMQKyrSqXkwqGTj+dScJSaSMOQ8ziniJ2PB5N55/MLPV5RYtw==", "user"=>{"email"=>"emanemy@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emanemy@yahoo.com' LIMIT 1
+  [1m[36mSQL (14.9ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('emanemy@yahoo.com', '$2a$10$rovE7Hhc4/qaRcNOraibt.Ld3ZGP0SCVqVPGXQbeZBVgKkIpV6KGe', '2016-05-18 20:35:38', '2016-05-18 20:35:38')[0m
+  [1m[35m (148.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.3ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2016-05-18 20:35:38', `current_sign_in_at` = '2016-05-18 20:35:38', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2016-05-18 20:35:38' WHERE `users`.`id` = 2
+  [1m[36m (63.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 333ms (ActiveRecord: 235.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-18 22:35:38 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-05-18 22:35:56 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23.1ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-05-18 22:36:10 +0200
+
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/eman/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (24.7ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-05-18 22:36:18 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-18 22:36:18 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (18.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateGroups (20160519073618)
+  [1m[35m (280.6ms)[0m  CREATE TABLE `groups` (`id` int(11) auto_increment PRIMARY KEY, `group` text, `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_groups_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (647.7ms)[0m  [1mALTER TABLE `groups` ADD CONSTRAINT `fk_rails_5e78cd340a`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160519073618')[0m
+  [1m[35m (35.0ms)[0m  COMMIT
+Migrating to CreateFriends (20160519073631)
+  [1m[36m (320.3ms)[0m  [1mCREATE TABLE `friends` (`id` int(11) auto_increment PRIMARY KEY, `friend_id` int(11), `group_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_friends_on_group_id`  (`group_id`) ,  INDEX `index_friends_on_user_id`  (`user_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (614.7ms)[0m  ALTER TABLE `friends` ADD CONSTRAINT `fk_rails_ffa4cb92d9`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+
+  [1m[36m (791.7ms)[0m  [1mALTER TABLE `friends` ADD CONSTRAINT `fk_rails_9cfeeb4593`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160519073631')[0m
+  [1m[35m (64.5ms)[0m  COMMIT
+Migrating to CreateOrders (20160519073641)
+  [1m[36m (298.0ms)[0m  [1mCREATE TABLE `orders` (`id` int(11) auto_increment PRIMARY KEY, `order` text, `place` text, `Image` text, `date` datetime, `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_orders_on_user_id`  (`user_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (681.1ms)[0m  ALTER TABLE `orders` ADD CONSTRAINT `fk_rails_f868b47f6a`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160519073641')
+  [1m[36m (31.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateInvites (20160519073652)
+  [1m[35m (497.8ms)[0m  CREATE TABLE `invites` (`id` int(11) auto_increment PRIMARY KEY, `join` tinyint(1), `order_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_invites_on_order_id`  (`order_id`) ,  INDEX `index_invites_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (647.8ms)[0m  [1mALTER TABLE `invites` ADD CONSTRAINT `fk_rails_8e5800afe2`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (614.0ms)[0m  ALTER TABLE `invites` ADD CONSTRAINT `fk_rails_ff69dbb2ac`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160519073652')
+  [1m[36m (30.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAmountOrders (20160519073704)
+  [1m[35m (382.5ms)[0m  CREATE TABLE `amount_orders` (`id` int(11) auto_increment PRIMARY KEY, `item` text, `comment` text, `amount` int(11), `price` float, `order_id` int(11), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_amount_orders_on_order_id`  (`order_id`) ,  INDEX `index_amount_orders_on_user_id`  (`user_id`) ) ENGINE=InnoDB
+  [1m[36m (635.6ms)[0m  [1mALTER TABLE `amount_orders` ADD CONSTRAINT `fk_rails_588b7e98da`
+FOREIGN KEY (`order_id`)
+  REFERENCES `orders` (`id`)
+[0m
+  [1m[35m (603.9ms)[0m  ALTER TABLE `amount_orders` ADD CONSTRAINT `fk_rails_e0278e0fb4`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160519073704')
+  [1m[36m (43.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'yallanotlob_development'
+  AND fk.table_name = 'amount_orders'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `amount_orders`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'yallanotlob_development'
+  AND fk.table_name = 'friends'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `friends`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'yallanotlob_development'
+  AND fk.table_name = 'groups'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `groups`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'yallanotlob_development'
+  AND fk.table_name = 'invites'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `invites`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'yallanotlob_development'
+  AND fk.table_name = 'orders'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `orders`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'yallanotlob_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-19 09:43:32 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/eman/.rvm/gems/ruby-2.3.0@rails4/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 90ms (Views: 74.3ms | ActiveRecord: 0.0ms)
