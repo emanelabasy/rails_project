@@ -41,17 +41,26 @@
                 <ul class="nav navbar-nav">
                     <% if current_user %>
                     <li>
-                    	<!-- <%= link_to 'Show ALL Users', users_path  %> -->
+                        <%= link_to 'Add Group', new_group_path  %> 
                     </li>
                     <li>
+                        <%= link_to 'Show All Groups', groups_path  %>
                     </li>
                     <li>
+                        <%= link_to 'Add Friend', new_friend_path  %> 
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <%= link_to 'Show All Friends', friends_path  %>
                     </li>
                     <li>
-                        <a href="/users/sign_out">Sign out</a>
+                        <%= link_to 'Add orders', orders_path  %>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <!-- <a href="/users/sign_out">Sign out</a> -->
+                        <%= link_to 'Sign out', '/users/sign_out',method: :delete  %>
                     </li>
                     <% else %>
                     

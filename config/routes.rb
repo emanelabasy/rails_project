@@ -5,6 +5,22 @@ Rails.application.routes.draw do
   resources :friends
   resources :groups
   devise_for :users
+
+  
+  # get 'emy' => 'welcome#hello'
+
+   # root 'welcome#hello'
+
+   root 'user#index'
+
+   # get '/users/sign_out' => 'user#sign_out'
+   
+
+  resources :groups do 
+    resources :friends
+  end
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
