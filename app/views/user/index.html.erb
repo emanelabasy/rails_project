@@ -7,12 +7,12 @@
 
  <div class="row">
 
-	<div class="col-md-6" style=" background-color:lightcyan ;">
+	<div class="col-md-5" style=" background-color:lightcyan; margin:10px ;">
 		<h3><font color="brown"><u> My Order :</u></font></h3>
 			<% @myorder.each do |myord| %>
 	    	<a href="#"></a>
 	        <!-- <img class="img-responsive" width="50"  src="/images/2.jpg" alt=""> -->
-	        <strong><%= myord.order%>&nbsp;&nbsp;</strong><font color="heavycyan" size="3"> on &nbsp;&nbsp;<%= myord.created_at%></font><br/><br/>  
+	       <font color="heavycyan" size="3"><u> <strong><%= myord.order%></strong></u>&nbsp;&nbsp; on &nbsp;&nbsp;<%= myord.created_at%></font><br/><br/>  
 	        <% end %>
 	        <hr/>
 
@@ -21,9 +21,14 @@
 	<div class="col-md-6" style=" background-color:lightblue ;">
 		 <h3><font color="heavybrown"><u>Order My Friends :</u></font></h3>
 	    	<% @orderfriends.each do |friendord| %>
-	    	<a href="#"></a>
+
+	    	<% User.all.each do |user| %>
+	    		<% if user.id== friendord.user_id %>
+	    			<font color="blue" size="3"><u><%= user.email %></u> 
+	    	<% end %>
+	    	<% end %>		
 	        <!-- <img class="img-responsive" width="50"  src="/images/2.jpg" alt=""> -->
-	        <font color="blue" size="3"><u>name</u> has created <u>on order</u> for&nbsp;&nbsp;<strong><%= friendord.order%>&nbsp;&nbsp;</strong> From &nbsp;&nbsp;<u><strong><%= friendord.place%></strong></u>&nbsp;&nbsp;on &nbsp;&nbsp;<%= friendord.created_at%></font> <br/><br/> 
+	        &nbsp;&nbsp;has created <u>on order</u> for&nbsp;&nbsp;<strong><%= friendord.order%>&nbsp;&nbsp;</strong> From &nbsp;&nbsp;<u><strong><%= friendord.place%></strong></u>&nbsp;&nbsp;on &nbsp;&nbsp;<%= friendord.created_at%></font> <br/><br/> 
 	        <% end %>
 	        <hr/>
 	</div>

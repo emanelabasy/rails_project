@@ -10,7 +10,6 @@ class UserController < ApplicationController
     			end
     		end	
 
-
 			@orders = Order.all
 			@friends = Friend.all
 			@myorder=[]
