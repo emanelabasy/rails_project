@@ -1,35 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Orders</h1>
+<h1>Listing My Orders</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-default">
     <tr>
+      <th>#</th>
       <th>Order</th>
       <th>Place</th>
-      <th>Image</th>
-      <th>Date</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>Date make order</th>
+      <th>Actions</th>
     </tr>
   </thead>
-
   <tbody>
+    <tr>
+    <% i=0 %>
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.order %></td>
-        <td><%= order.place %></td>
-        <td><%= order.Image %></td>
-        <td><%= order.date %></td>
-        <td><%= order.user %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.id == order.user.id %>
+           <th scope="row"><%= i+=1 %></th>
+           <font color="" size="3"> <td><%= order.order %></td>
+            <td><%= order.place %></td>
+            <td><%= order.created_at %></td></font>
+       <td> <a class="btn btn-primary"<%= link_to 'Show', order %>&nbsp;&nbsp;||&nbsp;&nbsp;
+
+       <a class="btn btn-primary"<%= link_to 'Edit', edit_order_path(order) %>&nbsp;&nbsp;||&nbsp;&nbsp;
+
+      <a class="btn btn-danger" <%= link_to 'Remove', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <% end %> 
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Order', new_order_path %>
+<br>
+<hr/>
+
+<a class="btn btn-primary"<%= link_to 'New Order', new_order_path %><span class="glyphicon glyphicon-chevron-right"></span>
+
+<hr/>
+
+
+
+

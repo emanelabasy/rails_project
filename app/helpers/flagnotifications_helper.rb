@@ -1,0 +1,2 @@
+module FlagnotificationsHelper
+end

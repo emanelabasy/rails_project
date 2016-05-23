@@ -54,13 +54,10 @@ class FriendsController < ApplicationController
     if (current_user)
     @friend = Friend.new(friend_params)
     @friend.group_id=params[:group_id]
-    # # @friend['email']
-    # # @user = User.select("id").where('users.email'=>@friend.email)
-    # abort
+    
     @users = User.all
     @friends = Friend.all
     flag=0
-    # falsgflage=0
     addgroup=0
     duplicatefriend=0
     duplicategroup=0
@@ -78,6 +75,12 @@ class FriendsController < ApplicationController
                     @friend['friend_id']=user.id
                     @friend['email']=nil
                     @friend.group_id=nil
+                    # add new notification for add new friend
+                    @notification = Notification.new
+                    @notification.user_id=current_user.id
+                    @notification.message="Add new friend to his list friends ^_^"
+                    @notification.addfriend=user.id
+                    @notification.save
                     respond_to do |format|
                         if @friend.save
                           format.html { redirect_to friends_path, notice: 'Friend was successfully created.' }
@@ -88,7 +91,6 @@ class FriendsController < ApplicationController
                          end
                     end     
                 else
-                  # if params[:group_id]==nil
                     respond_to do |format|
                       format.html { redirect_to friends_path,notice: 'This Friend aready exists ^_^'}
                       format.json { render json: @friend.errors, status: :unprocessable_entity }
@@ -115,6 +117,12 @@ class FriendsController < ApplicationController
                             @friend['friend_id']=user.id
                             @friend['email']=nil
                             @friend.group_id=@friend.group_id
+                            # add new notification for add my friend in my group
+                            @notification = Notification.new
+                            @notification.user_id=current_user.id
+                            @notification.message="Add his friend to his list groups ^_^"
+                            @notification.addfgroup=user.id
+                             @notification.save
                             respond_to do |format|
                                 if @friend.save
                                   format.html { redirect_to group_path(@friend.group_id), notice: 'Friend was successfully created.' }
@@ -178,7 +186,13 @@ class FriendsController < ApplicationController
   def destroy
     if (current_user)
       if @friend.group_id==nil
-          # @friend.group_id=params[:group_id]
+
+          # add new notification for delete his friend from his list friends 
+          @notification = Notification.new
+          @notification.user_id=current_user.id
+          @notification.message="Delete his friend from his list friends - _ -"
+          @notification.delfriend=@friend.friend_id
+           @notification.save
           # @friend.destroy
           Friend.where(user_id:@friend.user_id,friend_id:@friend.friend_id).destroy_all
           respond_to do |format|
@@ -187,6 +201,13 @@ class FriendsController < ApplicationController
           end
       else
           group_id=@friend.group_id
+
+           # add new notification for delete his friend from his list groups 
+          @notification = Notification.new
+          @notification.user_id=current_user.id
+          @notification.message="Delete his friend from his list groups - _ -"
+          @notification.delfgroup=@friend.friend_id
+           @notification.save
           @friend.destroy
           respond_to do |format|
             format.html { redirect_to group_path(group_id), notice: 'Friend was successfully destroyed from Group.' }

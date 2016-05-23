@@ -3,7 +3,11 @@ class UserController < ApplicationController
 	def index
 		if(current_user)
 			@users = User.all
+			@friends = Friend.all
 			@currentuser=[]
+			@myfiendnots=[]
+			# @mynotifcates=[]
+			@myfiendnotifcates=[]
 			for use in @users do
       			if current_user.id == use.id
             		@currentuser << use
@@ -37,6 +41,26 @@ class UserController < ApplicationController
     			end	
     		end	
 	@orderfriends=@orderfriends.last(3)
+
+	# for show notifications
+	@notifications = Notification.all
+
+	for friendnot in @friends do
+		if friendnot.user_id == current_user.id
+    		@myfiendnots << friendnot
+		end
+	end	
+
+	@myfiendnots=@myfiendnots.uniq
+	for fnot in @myfiendnots do
+		for myfdnotifcate in @notifications do
+			if fnot.friend_id == myfdnotifcate.user_id
+	    		@myfiendnotifcates << myfdnotifcate
+			end
+		end	
+	end	
+
+	@myfiendnotifcates=@myfiendnotifcates.last(10)
 
 		else
 			redirect_to "/users/sign_in"

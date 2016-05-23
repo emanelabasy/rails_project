@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    if (current_user)
+     @orders = Order.all
+    else
+      redirect_to "/users/sign_in"
+    end 
   end
 
   # GET /orders/1
@@ -24,17 +28,11 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    if (current_user)
     @order = Order.new(order_params)
-
+    @order['user_id']=current_user.id
     respond_to do |format|
       if @order.save
-        # find user invited..
-        #send notification..
-
-        #dh user_invited: 
-        #user_invited = @order.user
-
-
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
 
@@ -43,6 +41,9 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+    else
+      redirect_to "/users/sign_in"
+    end 
   end
 
   # PATCH/PUT /orders/1

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @notification.message %>
+</p>
+
+<p>
+  <strong>Addfriend:</strong>
+  <%= @notification.addfriend %>
+</p>
+
+<p>
+  <strong>Addfgroup:</strong>
+  <%= @notification.addfgroup %>
+</p>
+
+<p>
+  <strong>Delfriend:</strong>
+  <%= @notification.delfriend %>
+</p>
+
+<p>
+  <strong>Delfgroup:</strong>
+  <%= @notification.delfgroup %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @notification.user %>
+</p>
+
+<%= link_to 'Edit', edit_notification_path(@notification) %> |
+<%= link_to 'Back', notifications_path %>

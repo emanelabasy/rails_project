@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyText
+  addfriend: 1
+  addfgroup: 1
+  delfriend: 1
+  delfgroup: 1
+  user_id: 
+
+two:
+  message: MyText
+  addfriend: 1
+  addfgroup: 1
+  delfriend: 1
+  delfgroup: 1
+  user_id: 

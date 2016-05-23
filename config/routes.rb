@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :notifications
+  resources :flagnotifications
+  resources :notifications
   resources :amount_orders
   resources :invites
   resources :orders

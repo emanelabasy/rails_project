@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520173058) do
+ActiveRecord::Schema.define(version: 20160523084320) do
 
   create_table "amount_orders", force: :cascade do |t|
     t.text     "item",       limit: 65535
@@ -59,6 +59,19 @@ ActiveRecord::Schema.define(version: 20160520173058) do
   add_index "invites", ["order_id"], name: "index_invites_on_order_id", using: :btree
   add_index "invites", ["user_id"], name: "index_invites_on_user_id", using: :btree
 
+  create_table "notifications", force: :cascade do |t|
+    t.text     "message",    limit: 65535
+    t.integer  "addfriend",  limit: 4
+    t.integer  "addfgroup",  limit: 4
+    t.integer  "delfriend",  limit: 4
+    t.integer  "delfgroup",  limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
   create_table "orders", force: :cascade do |t|
     t.text     "order",      limit: 65535
     t.text     "place",      limit: 65535
@@ -96,5 +109,6 @@ ActiveRecord::Schema.define(version: 20160520173058) do
   add_foreign_key "groups", "users"
   add_foreign_key "invites", "orders"
   add_foreign_key "invites", "users"
+  add_foreign_key "notifications", "users"
   add_foreign_key "orders", "users"
 end

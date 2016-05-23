@@ -1,39 +1,23 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Order:</strong>
-  <%= @order.order %>
+  
+  <p>
+<h1><font color="brown"><u> Order:</u></font>
+  <i class="fa fa-american-sign-language-interpreting" aria-hidden="true"></i> <%= @order.order %></h1>
 </p>
-
 <p>
-  <strong>Place:</strong>
-  <%= @order.place %>
+  <font color="heavybrown" size="3"><u><strong>Place:</strong></u></font>&nbsp;&nbsp;&nbsp;
+  <font color="" size="3"><%= @order.place %></font>
 </p>
-
 <p>
-  <strong>Image:</strong>
-  <%= @order.Image %>
+  <font color="heavybrown" size="3"><u><strong>Date make order:</strong></u></font>&nbsp;&nbsp;&nbsp;
+ <font color="" size="3"><%= @order.created_at %></font>
 </p>
+<hr/>
+<a class="btn btn-primary"<%= link_to 'Edit', edit_order_path(@order) %>&nbsp;&nbsp;||&nbsp;&nbsp;
 
-<p>
-  <strong>Date:</strong>
-  <%= @order.date %>
-</p>
+<a class="btn btn-primary"<%= link_to 'Back', orders_path %><span class="glyphicon glyphicon-chevron-left"></span><br/>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
+<%= hidden_field_tag :'order_id' ,@order.id %>
+<hr>
 
 
-<script type="text/javascript">
-
-    var dispatcher = new WebSocketRails('ws//:localhost:3000'); 
-    
-    dispatcher.on_open = function(data) {  
-        console.log('Connection has been established: ', data);
-}  
-</script>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
