@@ -59,11 +59,3 @@ group :development do
   gem 'spring'
 end
 
-# for make deployment
-group :development, :test do
-gem 'mysql'
-end
-group :production do
-gem 'pg'
-end
-
